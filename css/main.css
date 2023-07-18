@@ -24,14 +24,127 @@ body {
     line-height: 1.1;
     font-family: 'Work Sans', sans-serif;
 }
-a,
-a:hover {
+a {
     color: inherit;
     text-decoration: none;
+    transition: 200ms ease;
+}
+
+a:hover {
+    color: #000;
 }
 
 img,
 svg {
     width: 100%;
     height: 100%;
+}
+ul {
+    list-style: none;
+}
+
+/* Reused Styles */
+.flex {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.flex-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.align-center {
+    align-items: center;
+}
+.justify-center {
+    justify-content: center;
+}
+.justify-space {
+    justify-content: space-between;
+}
+.container {
+    padding-left: clamp(90px, 10vw, 12rem);
+    padding-right: clamp(90px, 10vw, 12rem);
+}
+
+
+header,
+.banner,
+.banner .banner-image-container {
+    height: 100%;
+}
+
+/* Header */
+
+header nav {
+    position: sticky;
+    padding: 1rem 0;
+    background-color: #fff;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.05);
+}
+header nav h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+header nav h1 span {
+    background: linear-gradient(180deg, #291ACB 0%, #8850FF 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+header nav span.logo-icon,
+header nav span.nav-icon {
+    display: inline-block;
+}
+header nav span.logo-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: .5rem;
+}
+
+header nav ul {
+    gap: 1.5rem;
+}
+header nav ul li,
+header nav ul li a {
+    color: #3C354F;
+    font-size: .95rem;
+    font-weight: 500;
+}
+header nav ul li.follow {
+    border-radius: 0.5rem;
+    background: rgba(11, 2, 35, 0.10);
+    padding: .85rem 1.5rem;
+    gap: .5rem;
+}
+header nav ul li.follow a:first-child {
+    margin-left: 1rem;
+}
+
+header nav ul li span.nav-icon {
+    width: 2rem;
+    height: 1.5rem;
+}
+
+/* Banner */
+.banner .banner-text,
+.banner .banner-image-container {
+    width: 50%;
+}
+.banner .banner-image-container {
+    padding-left: 0;
+}
+.banner .banner-image-container .banner-image {
+    height: 100%;
+    width: 100%;
+    background: url("../assets/static/media/images/Group\ 18.png") bottom / contain no-repeat;
 }
