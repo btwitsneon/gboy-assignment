@@ -497,7 +497,7 @@ section.genre main {
 
 section.genre .genre-card .genre-card-inner {
     position: relative;
-    padding: .75rem 1rem;
+    padding: .75rem;
     border-radius: 9999px;
     overflow: hidden;
     gap: .85rem;
