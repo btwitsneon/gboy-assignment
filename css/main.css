@@ -667,4 +667,23 @@ footer .legal {
     section.careers .career-info .career-location ul {
         font-size: .55rem;
     }
+    section.genre {
+        font-size: .5rem;
+        padding: 7rem 0;
+    }
+    section.genre .genre-card .genre-card-inner {
+        padding: .65rem .42rem;
+        gap: .15rem;
+    }
+    section.genre main {
+        gap: 0;
+        row-gap: 1rem;
+    }
+    section.genre .genre-card .icon {
+        width: .85rem;
+        height: .85rem;
+    }
+    section.genre .genre-card {
+        width: 33.3333333%;
+    }
 }
