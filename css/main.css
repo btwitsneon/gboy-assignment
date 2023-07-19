@@ -382,7 +382,6 @@ section.videos-showcase main figure.video-card figcaption {
 section.avail .avail-cover .avail-cover-image {
     width: 90%;
     position: relative;
-    margin: 0 auto;
 }
 section.avail .avail-cover .small-image {
     position: absolute;
@@ -394,6 +393,9 @@ section.avail main .image-container {
 section.avail main .image-container:last-child {
     background-color: #fff;
     padding: .25rem;
+}
+section.avail main > div:first-child .avail-cover .avail-cover-image {
+    margin-left: auto;
 }
 section.avail main > div,
 section.avail main > div:last-child .avail-cover {
@@ -648,5 +650,8 @@ footer .legal {
     }
     section.videos-showcase main {
         grid-template-columns: 1fr;
+    }
+    section.careers .career-info .career-location ul {
+        font-size: .55rem;
     }
 }
