@@ -68,6 +68,7 @@ button.secondary {
     color: #291ACB;
     font-weight: 600;
 }
+
 .button {
     cursor: pointer;
     transition: transform 200ms ease;
@@ -119,14 +120,29 @@ button:active,
     padding-left: clamp(90px, 10vw, 12rem);
     padding-right: clamp(90px, 10vw, 12rem);
 }
+.gradient {
+    background: var(--linear-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 
 header,
 .banner,
 .banner .banner-image-container,
 .banner .banner-text,
-section.about .about-cover {
+section.about .about-cover,
+section.careers main {
     height: 100%;
+}
+
+
+.banner .banner-image-container {
+    padding-left: 0;
+}
+.banner .banner-text .banner-text-inner {
+    padding-right: .5rem;
 }
 
 /* Default Style */
@@ -225,16 +241,10 @@ header nav ul li span.nav-icon {
 .banner .banner-image-container {
     width: 60%;
 }
-.banner .banner-image-container {
-    padding-left: 0;
-}
 .banner .banner-image-container .banner-image {
     height: 100%;
     width: 100%;
     background: url("../assets/static/media/images/Group\ 18.png") bottom / contain no-repeat;
-}
-.banner .banner-text .banner-text-inner {
-    padding-right: .5rem;
 }
 .banner .banner-text h4 {
     color: #0B0223;
@@ -366,6 +376,53 @@ section.videos-showcase main figure.video-card figcaption {
     margin-top: 1rem;
 }
 
+/* CAREERS SECTION */
+section.careers {
+    color: #fff;
+    background: linear-gradient(90deg, #291ACB 0%, #291ACB 100%);
+    padding: 0;
+}
+section.careers main {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+section.careers .career-info .title {
+    text-align: left;
+}
+section.careers .career-info {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+    padding-right: 5rem;
+}
+section.careers .career-info .title p {
+    color: #fff;
+    margin: 0;
+}
+section.careers .career-info .career-location ul {
+    font-size: .85rem;
+    font-weight: 600;
+    line-height: 2rem;
+}
+section.careers .career-info .career-location ul.location {
+    text-align: right;
+}
+section.careers .career-info .career-location ul:first-child li::after {
+    content: '+';
+}
+section.careers .career-info button {
+    margin-top: 2rem;
+}
+section.careers .career-cover {
+    background: url("../assets/static/media/images/Vector\ 3.png") left / cover no-repeat;
+    height: 100%;
+}
+section.careers .career-cover figure {
+    height: 100%;
+}
+section.careers .career-cover figure img {
+    object-fit: contain;
+    object-position: center;
+}
 /* GENRE SECTION */
 section.genre {
     color: #0B0223;
@@ -482,10 +539,17 @@ footer .legal {
     .banner .banner-text h1 {
         font-size: 4rem;
     }
-    .banner .banner-text .banner-text-inner {
+    .banner .banner-text .banner-text-inner,
+    section.careers .career-info,
+    section.careers .career-cover  {
         padding-right: clamp(30px, 4vw, 5rem);
     }
-    .banner .banner-image-container {
+
+    section.careers .career-cover {
+        padding-left: clamp(30px, 4vw, 5rem);
+    }
+    .banner .banner-image-container,
+    section.careers .career-info {
         padding-left: clamp(30px, 4vw, 5rem);
     }
     .banner .banner-text .perks li {
@@ -497,6 +561,13 @@ footer .legal {
     header nav,
     section.about {
         flex-direction: column;
+    }
+    section.careers main {
+        grid-template-columns: 1fr;
+    }
+    section.careers .career-info,
+    section.careers .career-cover {
+        width: 100%;
     }
     
     header nav ul.flex-space,
