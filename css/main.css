@@ -2,7 +2,8 @@
 :root {
     --linear-right: linear-gradient(90deg, #291ACB 0%, #8850FF 100%);
     --linear-bottom: linear-gradient(180deg, #291ACB 0%, #8850FF 100%);
-    --linear-white: linear-gradient(180deg, #fff 0%, #fff 100%)
+    --linear-white: linear-gradient(180deg, #fff 0%, #fff 100%);
+    --bg-linear: linear-gradient(90deg, rgba(41, 26, 203, 0.03) 0%, rgba(41, 26, 203, 0.03) 100%);
 }
 
 /* Normalize default styles */
@@ -276,6 +277,9 @@ header nav ul li span.nav-icon {
 
 
 /* ABOUT SECTION */
+section.about {
+    background: var(--bg-linear);
+}
 section.about .about-cover {
     width: 60%;
 }
@@ -362,7 +366,71 @@ section.videos-showcase main figure.video-card figcaption {
     margin-top: 1rem;
 }
 
+/* GENRE SECTION */
+section.genre {
+    color: #0B0223;
+    font-size: .95rem;
+    font-weight: 600;
+    background: var(--bg-linear);
+}
+section.genre main {
+    flex-wrap: wrap;
+    gap: 2rem;
+}
 
+section.genre .genre-card .genre-card-inner {
+    position: relative;
+    padding: .75rem 1rem;
+    border-radius: 9999px;
+    overflow: hidden;
+    gap: .85rem;
+    cursor: pointer;
+}
+section.genre .genre-card .genre-card-inner::before,
+section.genre .genre-card .genre-card-inner::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 9999px;
+    background: var(--linear-right);
+    z-index: -2;
+}
+section.genre .genre-card .genre-card-inner::before {
+    opacity: 0;
+    will-change: opacity;
+    transition: opacity 200ms ease;
+}
+section.genre .genre-card .genre-card-inner::after {
+    z-index: -1;
+    margin: .15rem;
+    background: #fff;
+}
+section.genre .genre-card .icon {
+    width: 2.35rem;
+    height: 2.35rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+section.genre .genre-card .text {
+    background: linear-gradient(90deg, #000 0%, #000 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #000;
+    transition: background 200ms ease;
+    
+}
+section.genre .genre-card:hover .text {
+    background: var(--linear-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #000;
+}
+section.genre .genre-card:hover .genre-card-inner::before {
+    opacity: 1;
+}
 /* FOOTER */
 footer {
     background-color: #0B0223;
@@ -440,6 +508,9 @@ footer .legal {
     section.about .about-cover,
     section.about .about-info {
         width: 100%;
+    }
+    header nav ul li.follow {
+        justify-content: center;
     }
     section.about .about-info,
     section.about .about-info .title {
