@@ -658,7 +658,7 @@ footer .legal {
         font-size: 1rem;
     }
     button {
-        font-size: .85rem;
+        font-size: calc(.75rem + .1vw);
         padding: 1.2rem 2rem;
     }
     section.videos-showcase main {
