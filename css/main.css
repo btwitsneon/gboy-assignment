@@ -83,6 +83,11 @@ button:active,
     display: flex;
     flex-direction: column;
 }
+.flex-col-end {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
 .flex-space {
     display: flex;
     justify-content: space-between;
@@ -111,13 +116,47 @@ button:active,
 header,
 .banner,
 .banner .banner-image-container,
-.banner .banner-text {
+.banner .banner-text,
+section.about .about-cover {
     height: 100%;
 }
 
 /* Default Style */
 .icon {
     display: inline-block;
+}
+
+section,
+footer {
+    padding: 7rem 0;
+}
+section header,
+.title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+section header h1,
+.title h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+.title .gradient {
+    background: var(--linear-right);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+section header p,
+.title p {
+    font-size: .85rem;
+    font-weight: 400;
+    line-height: 1.65rem;
+    max-width: 37.125rem;
+    margin: 0 auto;
+    color: #534C64;
 }
 
 
@@ -231,9 +270,31 @@ header nav ul li span.nav-icon {
     margin-right: 1rem;
 }
 
-
+/* ABOUT SECTION */
+section.about .about-cover {
+    width: 60%;
+}
+section.about .about-info {
+    width: 40%;
+}
+section.about .about-info,
+section.about .about-info .title {
+    text-align: right;
+}
+section.about .about-slug {
+    margin-top: 2rem;
+    color: #534C64;
+}
+section.about .about-slug h4 {
+    font-size: .95rem;
+    font-weight: 500;
+}
+section.about .about-slug h2 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
 /* responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .container {
         padding-left: clamp(30px, 4vw, 5rem);
         padding-right: clamp(30px, 4vw, 5rem);
@@ -270,7 +331,8 @@ header nav ul li span.nav-icon {
     }
 }
 @media (max-width: 640px) {
-    header nav {
+    header nav,
+    section.about {
         flex-direction: column;
     }
     
@@ -278,10 +340,22 @@ header nav ul li span.nav-icon {
         flex-wrap: wrap;
         justify-content: center;
     }
-    header nav ul li.follow {
+    header nav ul li.follow,
+    section.about .about-cover,
+    section.about .about-info {
         width: 100%;
     }
-    
+    section.about .about-info,
+    section.about .about-info .title {
+        align-items: center;
+        text-align: center;
+    }
+    section.about .about-info h4 {
+        font-size: .85rem;
+    }
+    section.about .about-info h2 {
+        font-size: 1rem;
+    }
     button {
         font-size: .85rem;
         padding: 1.2rem 2rem;
