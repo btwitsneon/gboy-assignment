@@ -156,8 +156,10 @@ footer {
 }
 section header,
 .title {
-    text-align: center;
     margin-bottom: 3rem;
+}
+section > header {
+    text-align: center;
 }
 
 section header h1,
@@ -376,6 +378,49 @@ section.videos-showcase main figure.video-card figcaption {
     margin-top: 1rem;
 }
 
+/* AVAIL SECTION */
+section.avail .avail-cover .avail-cover-image {
+    width: 90%;
+    position: relative;
+    margin: 0 auto;
+}
+section.avail .avail-cover .small-image {
+    position: absolute;
+}
+section.avail main .image-container {
+    border-radius: .5rem;
+    overflow: hidden;
+}
+section.avail main .image-container:last-child {
+    background-color: #fff;
+    padding: .25rem;
+}
+section.avail main > div,
+section.avail main > div:last-child .avail-cover {
+    margin-bottom: 5rem;
+}
+section.avail main .avail-cover {
+    width: 50%;
+}
+section.avail main .avail-info {
+    width: 40%;
+}
+section.avail main > div:first-child .avail-cover .small-image {
+    bottom: 0;
+    left: 0;
+    width: 40%;
+    transform: translate(-30px, 20px);
+}
+section.avail main > div:first-child .title {
+    text-align: right;
+}
+section.avail main > div:last-child .avail-cover .small-image {
+    bottom: 0;
+    right: 0;
+    width: 40%;
+    transform: translate(30px, 20px);
+}
+
 /* CAREERS SECTION */
 section.careers {
     color: #fff;
@@ -559,14 +604,17 @@ footer .legal {
 }
 @media (max-width: 640px) {
     header nav,
-    section.about {
+    section.about,
+    section.avail main > div {
         flex-direction: column;
     }
     section.careers main {
         grid-template-columns: 1fr;
     }
     section.careers .career-info,
-    section.careers .career-cover {
+    section.careers .career-cover,
+    section.avail main .avail-cover,
+    section.avail main .avail-info {
         width: 100%;
     }
     
